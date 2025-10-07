@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,200;1,100&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #112240;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    font-family: 'Sono';
+    height: 60px;
+    color: #64ffda;
+}
+
+.navbar .right-menu{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1px;
+}
+
+.navbar .right-menu div{
+    text-align: center;
+}
+
+.navbar .right-menu #btn{
+    text-align: right;
+}
+
+.navbar .right-menu #btn #btn-real{
+    background-color: transparent;
+    border: 1px solid ;
+    color: #64ffda;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.navbar .right-menu #btn #btn-real:hover{
+    background-color: #2d8570;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+/* Section2: Jumbotron */
+.jumbotron{
+    display: flex;
+    height: 650px;
+}
+
+.jumbotron .jumbotron-left{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-left .line{
+    border-left: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.jumbotron .main-jumbotron{
+    flex: 5;
+    font-family: 'Sono';
+    color: #64ffda;
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.jumbotron .main-jumbotron div .my-name{
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+
+.jumbotron .main-jumbotron div p{
+    font-size: 15px;
+    max-width: 500px;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    text-align: justify;
+
+}
+
+.jumbotron .main-jumbotron div button{
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.jumbotron .main-jumbotron div #btn-real:hover{
+    background-color: #2d8570;
+    opacity: 0.9;
+    transition: 0.5s; 
+
+}
+
+.jumbotron .jumbotron-right{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-right .email{
+    position: fixed;
+    bottom: 200px;
+    color: white;
+    transform: rotate(90deg);
+    font-family: 'Montserrat';
+}
+.jumbotron .jumbotron-right .line{
+    border-right: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+}
+/* Section3: About Me */
+.about-me{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    padding: 0px 300px;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+.about-me .title{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.about-me .title .line{
+    border-top: 1px solid white;
+    width: 400px;
+    background-color: #112240;
+    margin-left: 10px;
+}
+
+.about-me div p{
+    max-width: 90%;
+}
+
+.about-me div img{
+    background-color: white;
+    opacity: 0.5;
+}
+
+.about-me div img:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.worked {
+  padding: 0px 200px 100px 200px;
+  font-family: 'Montserrat';
+  color: white;
+  margin-top: 50px;
+}
+
+.worked .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.worked .title .line {
+  border-top: 1px solid white;
+  width: 300px;
+  margin-left: 10px;
+}
+
+/* Grid utama */
+.worked .content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+  column-gap: 50px;
+}
+
+/* Sidebar kiri */
+.worked .sidebar {
+  border-left: 1px solid white;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.worked .sidebar div {
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 5px 0;
+}
+
+.worked .sidebar div:hover {
+  background-color: #000037;
+  opacity: 0.8;
+}
+
+.worked .sidebar .active {
+  background-color: #00005C;
+  color: #00ADB5;
+  font-weight: bold;
+}
+
+/* Kolom kanan */
+.worked .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.worked .description .title {
+  font-size: 20px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.worked .description .desc {
+  margin-top: 5px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+
+
+.porto {
+    color: white;
+    font-family: 'Montserrat';
+    padding: 0px 300px;
+}
+
+.porto .title {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.porto .title .line {
+    border-top: 1px solid white;
+    width: 400px;
+    background-color: #112240;
+    margin-left: 10px;
+}
+
