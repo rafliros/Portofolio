@@ -2,9 +2,34 @@ import { useState } from 'react';
 
 function Worked() {
   const [data] = useState([
-    { year: '2016-2019', company: 'SMP' },
-    { year: '2019-2021', company: 'SMA' },
-    { year: '2023-Sekarang', company: 'Bina Nusantara University' }
+    {
+      year: '2023-Sekarang',
+      institution: 'Bina Nusantara University',
+      degree: 'Computer Science',
+      description: [
+        'Jurusan Computer Science dengan fokus pada pengembangan web dan mobile.',
+        'Mengerjakan berbagai proyek pengembangan software dengan teknologi modern.'
+      ]
+    },
+    {
+      year: '2019-2021',
+      institution: 'Daarut Tauhiid Boarding school putra SMA',
+      degree: 'MIPA',
+      description: [
+        'Fokus pada mata pelajaran Matematika dan Ilmu Pengetahuan Alam.',
+        'Mulai mempelajari dasar-dasar pemrograman.'
+        
+      ]
+    },
+    {
+      year: '2016-2019',
+      institution: 'Daarut Tauhiid Boarding school putra SMP',
+      degree: 'SMP',
+      description: [
+        'Fokus pada mata pelajaran Matematika dan Ilmu Pengetahuan Alam.'
+        
+      ]
+    }
   ]);
 
   const [idxSelected, setIdxSelected] = useState(0);
@@ -14,34 +39,42 @@ function Worked() {
   };
 
   return (
-    <div className="worked">
+    <section className="worked">
       <div className="title">
         <h1>02. Pendidikan</h1>
         <div className="line"></div>
       </div>
 
-      {/* PEMBUNGKUS GRID WAJIB ADA */}
       <div className="content">
-        {/* Kolom kiri */}
         <div className="sidebar">
-          {data.map((value, index) => (
-            <div
+          {data.map((item, index) => (
+            <button
               key={index}
               onClick={() => onChange(index)}
-              className={idxSelected === index ? 'active' : ''}
+              className={`tab-button ${idxSelected === index ? 'active' : ''}`}
             >
-              {value.year}
-            </div>
+              {item.institution.split(' ').slice(-1)[0]}
+            </button>
           ))}
         </div>
 
-        {/* Kolom kanan */}
         <div className="description">
-          <p className="title">{data[idxSelected].company}</p>
-          <p className="desc">{data[idxSelected].year}</p>
+          <h3 className="role">
+            {data[idxSelected].degree}{' '}
+            <span className="highlight">@ {data[idxSelected].institution}</span>
+          </h3>
+          <p className="duration">{data[idxSelected].year}</p>
+          <ul className="responsibility-list">
+            {data[idxSelected].description.map((item, index) => (
+              <li key={index}>
+                <span className="arrow">▹</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
