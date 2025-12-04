@@ -12,6 +12,12 @@ class Jumbotron extends React.Component {
                         <a href="https://linkedin.com/in/muhammad-rafli-rosid" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin"></i>
                         </a>
+                        <a href="https://wa.me/6281808195077" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rafliross_/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-instagram"></i>
+                        </a>
                     </div>
                     <div className="line"></div>
                 </div>
@@ -35,12 +41,21 @@ class Jumbotron extends React.Component {
                         </p>
                     </div>
                     <div className="cta-buttons">
-                        <button className="btn-primary">
+                        <button 
+                            className="btn-primary"
+                            onClick={() => {
+                                const portoSection = document.querySelector('.porto');
+                                if (portoSection) {
+                                    portoSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
                             Lihat Portfolio
                         </button>
                         <button
                             className="btn-secondary"
-                            onClick={() => window.open('https://drive.google.com/uc?export=download&id=1hT_vAlAxYodRiESNwoyyawD_zA8h82bf', '_blank')}
+                            onClick={() => window.open('https://drive.google.com/uc?export=download&id=1ppt15Z1QJjWDUWyX_gPg7_gFou7ormdd', '_blank'
+)}
                         >
                             Download CV
                         </button>

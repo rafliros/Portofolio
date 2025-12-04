@@ -204,7 +204,7 @@ body {
 
 .jumbotron-left .social-links {
   position: fixed;
-  bottom: 200px;
+  bottom: 140px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -562,7 +562,7 @@ body {
    =============================== */
 
 .worked {
-  padding: 100px 150px;
+  padding: 100px 150px 100px 200px;
   color: #ccd6f6;
   font-family: 'Montserrat', sans-serif;
   background-color: #0a192f;
@@ -737,13 +737,28 @@ body {
 }
 
 /* =========================================================
-   PORTFOLIO SECTION — Right-Aligned & Tilted Paragraph
+   PORTFOLIO SECTION — Enhanced Modern Design
    ========================================================= */
 .porto {
-  padding: 100px 180px 100px 100px;
-  background-color: #0a192f;
+  padding: 120px 200px 120px 150px;
+  background: linear-gradient(180deg, #0a192f 0%, #112240 100%);
   color: #ccd6f6;
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background effect */
+.porto::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(100,255,218,0.08) 0%, rgba(17,34,64,0) 70%);
+  bottom: -200px;
+  left: -200px;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 /* ====== Title ====== */
@@ -751,22 +766,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .porto .title h1 {
   color: #64ffda;
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: -1px;
 }
 
 .porto .title .line {
   flex-grow: 1;
-  height: 1px;
-  background: linear-gradient(to right, rgba(100, 255, 218, 0.06), #64ffda);
-  max-width: 400px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(100, 255, 218, 0.2), #64ffda, rgba(100, 255, 218, 0.2));
+  max-width: 450px;
   margin-left: 20px;
+  border-radius: 1px;
 }
 
 /* ====== Portfolio Content ====== */
@@ -774,48 +793,106 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 40px;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin-left: auto;
 }
 
 .porto-item {
-  max-width: 700px;
-  margin-left: auto;
-  padding-right: 120px; /* sejajarkan dengan judul */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
+  padding: 30px 0;
+  border-left: 4px solid rgba\(100, 255, 218, 0.3\);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.porto-item::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #64ffda, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.porto-item:hover {
+  transform: translateX(-15px);
+  border-right-color: #64ffda;
+  background: rgba(100, 255, 218, 0.05);
+  padding: 30px 20px 30px 0;
+  border-radius: 8px;
+}
+
+.porto-item:hover::after {
+  opacity: 1;
 }
 
 .porto-item h3 {
   color: #ccd6f6;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 8px;
-}
-
-/* ====== Paragraf condong kanan ====== */
-.porto-item p {
-  color: #8892b0;
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0;
-  text-align: right;
-  padding-right: 40px;
-
-  /* efek condong ke kanan */
-  transform: skewX(10deg);
-  display: inline-block;
-  font-style: italic;
-
-  /* efek halus */
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
   transition: all 0.3s ease;
 }
 
-/* Efek saat hover */
-.porto-item p:hover {
-  transform: skewX(12deg) scale(1.02);
+.porto-item:hover h3 {
+  color: #64ffda;
+}
+
+/* Year/Position Badge */
+.porto-item .year {
+  color: #64ffda;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ====== Portfolio Description ====== */
+.porto-item p {
+  color: #8892b0;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+  text-align: right;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+.porto-item:hover p {
   color: #a8b2d1;
+  transform: translateX(-5px);
 }
 
 /* ====== Responsive ====== */
+@media screen and (max-width: 1200px) {
+  .porto {
+    padding: 100px 80px;
+  }
+
+  .porto .title h1 {
+    font-size: 32px;
+  }
+
+  .porto-item h3 {
+    font-size: 22px;
+  }
+
+  .porto-item p {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .porto {
     padding: 80px 60px;
@@ -824,6 +901,11 @@ body {
   .porto .title {
     justify-content: center;
     text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .porto .title h1 {
+    font-size: 28px;
   }
 
   .porto-content {
@@ -832,16 +914,29 @@ body {
   }
 
   .porto-item {
-    max-width: 90%;
-    margin-left: 0;
-    padding-right: 0;
+    align-items: center;
     text-align: center;
+    padding: 25px 0;
+  }
+
+  .porto-item:hover {
+    transform: none;
+    border-right: none;
+    border-bottom: 3px solid #64ffda;
+  }
+
+  .porto-item:hover::after {
+    display: none;
+  }
+
+  .porto-item h3 {
+    font-size: 20px;
   }
 
   .porto-item p {
-    padding-right: 0;
-    transform: none; /* hilangkan efek condong di mobile */
-    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    transform: none;
   }
 }
 
@@ -850,7 +945,32 @@ body {
     padding: 60px 30px;
   }
 
+  .porto .title {
+    margin-bottom: 40px;
+  }
+
+  .porto .title h1 {
+    font-size: 24px;
+  }
+
   .porto .title .line {
-    display: none;
+    max-width: 150px;
+  }
+
+  .porto-item {
+    padding: 20px 0;
+  }
+
+  .porto-item h3 {
+    font-size: 18px;
+  }
+
+  .porto-item p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .porto-item .year {
+    font-size: 12px;
   }
 }
